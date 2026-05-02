@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply min-h-screen bg-background text-text antialiased;
+}
+
+/* WHY: Recharts tooltips sit above chart cards without clipping. */
+.recharts-tooltip-wrapper {
+  z-index: 20;
+}
+
+@keyframes bar-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.bar-row-animate {
+  animation: bar-enter 0.45s ease forwards;
+  opacity: 0;
+}
